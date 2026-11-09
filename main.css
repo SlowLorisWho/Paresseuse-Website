@@ -140,7 +140,15 @@ h2 {
 }
 
 .faux-button:hover {
-    background-color: #044b5b;
+    background-color: #c7dee3;
+}
+
+#contactcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
 }
 
 #contact form {
@@ -150,7 +158,19 @@ h2 {
     align-items: center;
     width: 90%;
 
+}   
+
+.shitdontwork {
+    width: 30%;
+    padding: 10%;
+    background-color: #044b5b;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.3em;
+    margin: 20px;
 }
+
+
 
 #contact form label {
     margin: 10px 0 2px;
@@ -199,7 +219,6 @@ h2 {
 
 #socials ul {
     list-style-type: none;
-    margin: 20px;
     padding: 0;
     display: flex;
     justify-content: space-evenly;
@@ -209,7 +228,7 @@ h2 {
     display: block;
     color: #076c83;
     text-align: center;
-    margin: 14px 30px;
+    margin: 1px 30px;
     padding: .2em .3em;
     font-family: kepler-std, serif;
     text-decoration: none; 
