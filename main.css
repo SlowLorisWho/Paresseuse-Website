@@ -1,11 +1,47 @@
 :root {
-  --main-colour: rgba(7, 108, 131, 1); /* Match the variable name in your JS */
+  --main-colour: rgba(7, 108, 131, 1);
+  --glow-colour: rgba(64, 233, 233, 1);
   --blue-special: rgba(7, 108, 131, 1);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-position: center;
+    background-attachment: fixed; 
+    font-family: kepler-std, serif;
+}
+
+.blur-overlay {
+    position: fixed; /* Locks it to the viewport edges */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px); /* Your desired filter */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    
+    /* Optional: Optional dark/light tint so the blur stands out */
+    background-color: rgba(255, 255, 255, 0.2); 
+    
+    /* Ensure content scrolls normally inside or stays on top */
+    overflow-y: auto; 
 }
 
 .bgrSwap {
     display: flex;
     justify-self: center;
+}
+
+.bgrSwap button {
+    box-shadow: 
+     1px 1px 1px rgba(0, 0, 0, .7);
+    transition: all .3s ease; 
 }
 #blueButton {
   background-color: var(--blue-special);
@@ -21,6 +57,7 @@
 
 #blueButton:hover {
   transform: scale(1.2);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
 }
 
 #blueButton:focus {
@@ -41,6 +78,7 @@
 
 #greenButton:hover {
   transform: scale(1.2);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
 }
 
 #greenButton:focus {
@@ -61,29 +99,36 @@
 
 #redButton:hover {
   transform: scale(1.2);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
 }
 
 #redButton:focus {
   background-color: rgba(138, 37, 37, 1);
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: kepler-std, serif;
-    background-color: #ffffff;
-}
-
 h1 { 
   font-family: griffon, serif; 
-  font-size: 5vw; 
+  font-size: 6vw; 
   font-weight: 300; 
   text-align: center; 
   margin-bottom: 10px; 
+
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, .7);
+  transition: all .3s ease;
+
   
-  /* Apply core color styles here; the link will inherit them */
+
+  /* text-shadow: 
+    -1px -1px 0 #fff, 
+    1px  1px 0 #b8b8b8, 
+    2px  2px 0 #a1a1a1, 
+    3px  3px 0 #8b8b8b, 
+    4px  4px 3px rgba(0,0,0,0.4);
+  
+  
   color: var(--main-colour); 
-  transition: color 1s ease; 
+  transition: color 1s ease; */
 } 
 
 h1 a { 
@@ -95,7 +140,6 @@ h1 a {
   flex-direction: column; 
   align-items: center; 
   justify-content: center; 
-  padding: 1rem 1.5rem; 
   text-decoration: none; 
   
   /* FIXED: Replaced var(--bold) local variable with a standard font-weight */
@@ -128,8 +172,11 @@ nav ul {
     background-color: var(--main-colour);
     transition: background-color 1s ease;
 
+    box-shadow: 
+     1px 1px 1px rgba(0, 0, 0, .7);
+
     list-style-type: none;
-    margin: 20px;
+    margin: 15px;
     padding: 0;
     display: flex;
     justify-content: space-around;
@@ -145,10 +192,13 @@ nav ul li a {
     font-family: kepler-std, serif;
     font-weight: 700;
     font-size: 1.2em;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+    transition: all 0.3s ease; 
 }
 
 nav ul li a:hover {
       transform: skew(-10deg) scale(1.2);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
 }
 
 main {
@@ -158,7 +208,6 @@ main {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    background-color: rgba(191, 205, 216, 0.505);
 }
 
 #header-img
@@ -212,14 +261,13 @@ h2 {
 }
 
 .paragraph p a {
-    text-decoration: none;
-     color: color-mix(in oklab, var(--main-colour), white 40%);
-     transition: color 1s ease;
-     
+     text-decoration: none;
+     color: color-mix(in oklab, var(--main-colour), white 50%);
+     transition: all 0.3s ease;
 }
 
 .paragraph p a:hover  {
-    color: color-mix(in oklab, var(--main-colour), white 30%);
+    color: color-mix(in oklab, var(--main-colour), white 20%);
 }
 
 
@@ -238,7 +286,8 @@ h2 {
 
 .faux-button {
     background-color: var(--main-colour);
-    transition: background-color 1s ease;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+    transition: all 0.3s ease;
 
     border: none;
     color: white;
@@ -252,10 +301,16 @@ h2 {
     cursor: pointer;
     margin-top: 20px;
     margin-bottom: 40px;
+    background-color: var(--main-colour);
+    backdrop-filter: brightness(100%);
 }
 
 .faux-button:hover {
-    background-color: #c7dee3;
+    background-color: var(--main-colour);
+    color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+    filter: brightness(110%);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
 }
 
 #contactcontainer {
@@ -310,24 +365,32 @@ h2 {
 
 
 #contact button {
-background-color: var(--main-colour);
-  transition: background-color 1s ease;
-  margin-top: 20px;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  font-size: 1.2em;
-  font-family: kepler-std, serif;
-  font-weight: 400;
-  cursor: pointer;
+    background-color: var(--main-colour);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+    transition: all 0.3s ease;
+
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    font-family: kepler-std, serif;
+    font-weight: 400;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: var(--main-colour);
+    backdrop-filter: brightness(100%);    
 }
 
 #contact button:hover {
-  background-color: #044b5b;
+  background-color: var(--main-colour);
+  color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+  filter: brightness(110%);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
 }
 
 #socials {
@@ -343,19 +406,20 @@ background-color: var(--main-colour);
 
 #socials ul li a {
     display: block;
-    color: #076c83;
+    color: var(--main-colour);
     text-align: center;
     margin: 1px 30px;
     padding: .2em .3em;
     font-family: kepler-std, serif;
     text-decoration: none; 
-    border:  #076c83 2px solid;
+    border: var(--main-colour) 2px solid;
     font-weight: 400;
     font-size: 1.2em;
+    transition: all 0.2s ease;
 }
 
 #socials ul li a:hover{
-    background-color:#076c83;
+    background-color:var(--main-colour);
     color: #ffffff;
 }
 

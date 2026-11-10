@@ -5,6 +5,7 @@ function blueSwap() {
 
   // Apply the new colour globally
   root.style.setProperty('--main-colour', 'rgba(7, 108, 131, 1)');
+  root.style.setProperty('--glow-colour', 'rgba(64, 233, 233, 1)');
 }
 
 blueButton.addEventListener("click", blueSwap);
@@ -14,9 +15,10 @@ const greenButton = document.getElementById("greenButton");
 function greenSwap() {
   const root = document.documentElement;
 
-  // Apply the new colour globally
-  root.style.setProperty('--main-colour', 'rgba(37, 138, 47, 1)');
-  root.style.setProperty('--blue-special', 'rgba(98, 150, 167, 1)');
+  // Apply the new colour globally  
+  root.style.setProperty('--main-colour', 'rgba(17, 100, 20, 1)');
+  root.style.setProperty('--glow-colour', 'rgba(146, 233, 64, 1)');
+  root.style.setProperty('--blue-special', '#6296a7ff');
 }
 
 greenButton.addEventListener("click", greenSwap);
@@ -29,6 +31,7 @@ function redSwap() {
 
   // Apply the new colour globally
   root.style.setProperty('--main-colour', 'rgba(138, 37, 37, 1)');
+  root.style.setProperty('--glow-colour', 'rgba(255, 196, 0, 1)');
   root.style.setProperty('--blue-special', 'rgba(98, 150, 167, 1)');
 }
 
