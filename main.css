@@ -1,224 +1,197 @@
-:root {
-  --main-colour: rgba(7, 108, 131, 1);
-  --glow-colour: rgba(64, 233, 233, 1);
-  --bg-colour: rgba(205, 244, 250, 1);
-  --blue-special: rgba(7, 108, 131, 1);
+* {
+  box-sizing: border-box;
 }
 
-html, body {
+:root {
+--main-colour: rgba(7, 108, 131, 1);
+}
+
+html, body {    
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+    overflow-x: clip;
 }
 
 body {
-    background-position: center;
-    background-color: var(--bg-colour);
-    transition: all 0.3s ease;
-    background-attachment: fixed; 
-    font-family: kepler-std, serif;
+  background-image: url("images/main_photo.jpg");
+  background-size: cover;
+  background-position: top center; /* Centers the scaling vector */
+  background-repeat: no-repeat;
+  background-attachment: fixed;    /* Forces sizing relative to the viewport window */
 }
 
-.blur-overlay {
-    position: fixed; /* Locks it to the viewport edges */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(10px); /* Your desired filter */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    
-    /* Optional: Optional dark/light tint so the blur stands out */
-    background-color: rgba(255, 255, 255, 0.2); 
-    
-    /* Ensure content scrolls normally inside or stays on top */
-    overflow-y: auto; 
+
+.subh1 {
+    font-size: 15vw;
+    margin-bottom: 1vw;
 }
-
-.bgrSwap {
-    display: flex;
-    justify-self: center;
-}
-
-.bgrSwap button {
-    box-shadow: 
-     1px 1px 1px rgba(0, 0, 0, .7);
-    transition: all .3s ease; 
-}
-#blueButton {
-  background-color: var(--blue-special);
-  transition: all .3s ease;
-  border-style: none;
-  margin: 10px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-}
-
-#blueButton:hover {
-  transform: scale(1.2);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
-}
-
-#blueButton:focus {
-  background-color: #076c83;
-}
-
-#greenButton {
-  background-color: color-mix(in oklab, rgba(37, 138, 47, 1), white 30%);
-  transition: all .3s ease;
-  border-style: none;
-  margin: 10px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-}
-
-#greenButton:hover {
-  transform: scale(1.2);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
-}
-
-#greenButton:focus {
-  background-color: rgba(37, 138, 47, 1);
-}
-
-#redButton {
-  background-color: color-mix(in oklab, rgba(138, 37, 37, 1), white 30%);
-  transition: all .3s ease;
-  border-style: none;
-  margin: 10px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-}
-
-#redButton:hover {
-  transform: scale(1.2);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
-}
-
-#redButton:focus {
-  background-color: rgba(138, 37, 37, 1);
-}
-
-h1 { 
-  font-family: griffon, serif; 
-  font-size: 6vw; 
-  font-weight: 300; 
-  text-align: center; 
-  margin-bottom: 10px; 
-
-  text-shadow: 
-    1px 1px 1px rgba(0, 0, 0, .7);
-  transition: all .3s ease;
-
-  
-
-  /* text-shadow: 
-    -1px -1px 0 #fff, 
-    1px  1px 0 #b8b8b8, 
-    2px  2px 0 #a1a1a1, 
-    3px  3px 0 #8b8b8b, 
-    4px  4px 3px rgba(0,0,0,0.4);
-  
-  
-  color: var(--main-colour); 
-  transition: color 1s ease; */
-} 
 
 h1 a { 
-  /* REMOVED: color and transition (now inherited from h1) */
-  color: var(--main-colour);
-  transition: color 1s ease; 
+  color: rgb(255, 84, 138);
+  transition: all .3s ease;
 
-  display: inline-flex; 
+  display: flex; 
   flex-direction: column; 
   align-items: center; 
   justify-content: center; 
   text-decoration: none; 
+  opacity: 100%;
   
-  /* FIXED: Replaced var(--bold) local variable with a standard font-weight */
-  &:hover .titletext { 
-    font-weight: 700;
+  /*&:hover .titletext { 
+    font-family: "basset-two"; 
     transform: scale(1.05); 
-  } 
+  } */
 } 
 
-.titletext {
+
+/* .titletext {
   display: inline-grid;
   grid-template-areas: "stack";
   text-align: center;
   transition: font-weight 0.2s ease, transform 0.2s ease;
-}
+  line-height: 1;
+} 
 
 .titletext::before {
   grid-area: stack;
   content: attr(data-text);
-  font-weight: 700; /* Streamlined match */
+  font-weight: 700; /* Streamlined match 
   visibility: hidden;
+  line-height: 1;
 }
 
 .titletext-text {
   grid-area: stack;
+  line-height: 1;
+} */
+
+main {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.white {
+    overflow: hidden;
+    background-color: #c9f6ff;
+    padding: 0vh 5vw 10vh;
+    box-shadow: 
+    0px -10px 20px #c9f6ff,
+    0px -15px 30px #c9f6ff,
+    0px -20px 50px #c9f6ff,
+    0px -30px 70px #c9f6ff,
+    0px -40px 80px #c9f6ff,
+    0px -50px 100px #c9f6ff,
+    0px -70px 200px #c9f6ff,
+    0px -100px 250px #c9f6ff;
+}
+
+.notwhite {
+  background-image: url("images/main_photo.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed; /* Keep it uniform with the body */
+  background-repeat: no-repeat;
+  padding: 0vh 5vw 30vh;
 }
 
 
-nav ul {
-    background-color: var(--main-colour);
-    transition: background-color 1s ease;
-
-    box-shadow: 
-     1px 1px 1px rgba(0, 0, 0, .7);
-
-    list-style-type: none;
-    margin: 15px;
-    padding: 0;
+header {
+    position: sticky;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transform-origin:top; 
+    scale: var(--head-shrink);
+    z-index: 2;
+}
+
+.sticky-back {
+  background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(11, 42, 36, 0.719));
+  position: fixed;
+  z-index: 1; /* Lower number stays behind */
+  height: var(--banner-height);
+  opacity: var(--nav-opacity);
+  width: 100%;
+  
+}
+
+.PARESSEUSE  { 
+  font-family: "kuhlman-vf", sans-serif;
+  font-variation-settings: "SEED" 0, "wdth" var(--head-width);
+  font-size: 20vw; 
+  text-align: center; 
+  margin: 4vh 0 3vh; 
+  transition: all .3s ease;
+  line-height: 0.7;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+  text-shadow: 
+    2px 2px 0 rgb(7, 59, 88),
+    2px -2px 0 rgb(7, 59, 88),
+    -2px 2px 0 rgb(7, 59, 88),
+    -2px -2px 0 rgb(7, 59, 88),
+    2px 0px 0 rgb(7, 59, 88),
+    0px 2px 0 rgb(7, 59, 88),
+    -2px 0px 0 rgb(7, 59, 88),
+    0px -2px 0 rgb(7, 59, 88);
+} 
+
+nav {
+    position: sticky;
+    top: 0;
+    transform-origin:top; 
+    width: 100%;
+    
+
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    
+    
+    
 }
 
 
 nav ul li a {
     display: block;
-    color: #ffffff;
     text-align: center;
-    padding: 14px 16px;
+    padding-bottom: 4vh;
     text-decoration: none;
-    font-family: kepler-std, serif;
-    font-weight: 700;
-    font-size: 1.2em;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
-    transition: all 0.3s ease; 
+    font-family: "bd-gravel-vf", sans-serif;
+    font-variation-settings: "ROND" 200;
+    -webkit-text-stroke: rgb(7, 59, 88) 2px;
+    font-size: 3em;
+    opacity: 100%;
+    transition: all 0.2s ease; 
+    translate: 0px var(--trans-dist);
+    margin: 0 var(--pad-width);
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }
 
 nav ul li a:hover {
-      transform: skew(-10deg) scale(1.2);
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+      transform: scale(1.1);
+      opacity: 80%;
+      text-shadow: 1px 1px 3px rgba(7, 108, 131, .5);
 }
-
-main {
-    padding: 20px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-}
-
+  
 #header-img
 {
     width: 100%;
     height: 50vh;
     margin-bottom: 10px;
-    overflow: hidden;
     background-image: url("images/main_photo.jpg");
     background-size: cover;
     background-position: center;
@@ -246,31 +219,41 @@ h2 {
 
     font-size: 2em;
     text-align: center;
-    font-family: kepler-std, serif;
+    font-family: "t26-carbon", monospace;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .paragraph {
-    color: var(--main-colour);
-    transition: color 1s ease;
-
-    text-align: center;
-    font-family: kepler-std, serif;
-    margin-bottom: 20px;
+  color: var(--main-colour);
+  transition: color 1s ease;
+  text-align: center;
+  font-family: "t26-carbon", monospace;
+  font-weight: 400;
+  font-style: normal;
+  
+  /* Restrict layout width & center the block */
+  width: 100%;       
+  max-width: 100ch;   /* Optimal typographic reading width (~65 characters) */
+  margin: 0 auto;    /* Centers the entire text block horizontally */
+  padding: 0 10px;   /* Safe side-margins for mobile views */
 }
 
 .paragraph p {
-    font-size: 1.3em;
+  font-size: 1.3em;
+  line-height: 1.5;  /* FIX 2: Added a healthy line-height for better readability */
+  margin-top: 0;
 }
 
 .paragraph p a {
-     text-decoration: none;
-     color: color-mix(in oklab, var(--main-colour), white 50%);
-     transition: all 0.3s ease;
+  text-decoration: none;
+  color: color-mix(in oklab, var(--main-colour), white 50%);
+  transition: all 0.3s ease;
 }
 
+/* FIX 3: Cleaned up the completely duplicated hover rules */
 .paragraph p a:hover  {
-    color: color-mix(in oklab, var(--main-colour), white 20%);
+  color: color-mix(in oklab, var(--main-colour), white 20%);
 }
 
 
@@ -291,15 +274,18 @@ h2 {
     background-color: var(--main-colour);
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
     transition: all 0.3s ease;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+    transition: all 0.3s ease;
 
     border: none;
     color: white;
     padding: 10px 22px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    justify-self: center;
     font-size: 1.2em;
-    font-family: kepler-std, serif;
+    font-family: "t26-carbon", monospace;
     font-weight: 400;
     cursor: pointer;
     margin-top: 20px;
@@ -309,6 +295,11 @@ h2 {
 }
 
 .faux-button:hover {
+    background-color: var(--main-colour);
+    color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+    filter: brightness(110%);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
     background-color: var(--main-colour);
     color: rgba(255, 255, 255, 0.6);
     transform: scale(1.05);
@@ -394,6 +385,11 @@ h2 {
   transform: scale(1.05);
   filter: brightness(110%);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+  background-color: var(--main-colour);
+  color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+  filter: brightness(110%);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
 }
 
 #socials {
@@ -427,5 +423,9 @@ h2 {
 }
 
 footer {
-    margin-left: 20px;
+    font-family: "t26-carbon", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--main-colour);
+    justify-self: center;
 }
