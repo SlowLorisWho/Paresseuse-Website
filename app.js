@@ -6,6 +6,7 @@ function blueSwap() {
   // Apply the new colour globally
   root.style.setProperty('--main-colour', 'rgba(7, 108, 131, 1)');
   root.style.setProperty('--glow-colour', 'rgba(64, 233, 233, 1)');
+  root.style.setProperty('--bg-colour', 'rgba(205, 244, 250, 1)');
 }
 
 blueButton.addEventListener("click", blueSwap);
@@ -17,7 +18,7 @@ function greenSwap() {
 
   // Apply the new colour globally  
   root.style.setProperty('--main-colour', 'rgba(17, 100, 20, 1)');
-  root.style.setProperty('--glow-colour', 'rgba(146, 233, 64, 1)');
+  root.style.setProperty('--bg-colour', 'rgba(226, 252, 201, 1)');
   root.style.setProperty('--blue-special', '#6296a7ff');
 }
 
@@ -32,6 +33,7 @@ function redSwap() {
   // Apply the new colour globally
   root.style.setProperty('--main-colour', 'rgba(138, 37, 37, 1)');
   root.style.setProperty('--glow-colour', 'rgba(255, 196, 0, 1)');
+  root.style.setProperty('--bg-colour', 'rgba(254, 225, 216, 1)');
   root.style.setProperty('--blue-special', 'rgba(98, 150, 167, 1)');
 }
 
